@@ -10,6 +10,7 @@ namespace HR_Management.Controllers
     {
         public ActionResult Index()
         {
+            string test = "test string";
             return View();
         }
 
