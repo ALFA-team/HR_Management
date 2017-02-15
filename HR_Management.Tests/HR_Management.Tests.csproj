@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6841F861-BA4C-4DC1-AC2B-EA0C9147D9CD}</ProjectGuid>
+    <ProjectGuid>{1B195EB8-F507-455E-A344-3E5568AAD08D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HR_Management.Tests</RootNamespace>
@@ -93,7 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HR_Management\HR_Management.csproj">
-      <Project>{B16CA3EF-B9A7-41DD-BAE8-57A78818D583}</Project>
+      <Project>{43A6A86B-8A20-48CC-940D-324FAB6CB226}</Project>
       <Name>HR_Management</Name>
     </ProjectReference>
   </ItemGroup>
