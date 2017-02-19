@@ -1,0 +1,80 @@
+﻿@model List<HR_Management.Models.QuizzesModel>
+
+@{
+    ViewBag.Title = "Quizzes";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <title>Index</title>
+    <style>
+        div.cell-quizzes-head {
+            padding: 15px;
+            border: 1px;
+        }
+
+        div.cell-quizzes-entity {
+            padding: 5px 5px 5px 15px;
+            border: 1px;
+        }
+
+         div.cell-quizzes-action {
+            vertical-align: middle
+        }
+    </style>
+</head>
+<body>
+
+    @* quizzes info *@
+    <div class="quizzes-info" style="margin: 25px; ">
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Quizzes</h3>
+            </div>
+
+            <div class="col-md-2"></div>
+
+            <div class="col-md-2"></div>
+
+            <div class="col-md-2"></div>
+
+            <div class="col-md-2">
+                <h3>page 1 of N</h3>
+            </div>
+        </div>
+    </div>
+
+    @* quizzes block *@
+    <div class="quizzes-block" style="margin: 25px;">
+        <div class="quizzes-head">
+            <div class="row">
+                <div class="col-md-3 cell-quizzes-head" style="background-color: #ff0000;">Name</div>
+                <div class="col-md-3 cell-quizzes-head" style="background-color: #00ff7f;">Description</div>
+                <div class="col-md-2 cell-quizzes-head" style="background-color: #0026ff;">Last access date</div>
+                <div class="col-md-2 cell-quizzes-head" style="background-color: #808080;">Result</div>
+                <div class="col-md-2 cell-quizzes-head" style="background-color: #808000;">Actions</div>
+            </div>
+        </div>
+        <div class="quizzes-entity">
+
+            @foreach (var quizz in Model)
+            {
+                <div class="row">
+                    <div class="col-md-3 cell-quizzes-entity" style="background-color: #ff0000;">@quizz.Name</div>
+                    <div class="col-md-3 cell-quizzes-entity" style="background-color: #00ff7f;">@quizz.Description</div>
+                    <div class="col-md-2 cell-quizzes-entity" style="background-color: #0026ff;">@quizz.LastAccessDate</div>
+                    <div class="col-md-2 cell-quizzes-entity" style="background-color: #808080;">@quizz.Result</div>
+                    <div class="col-md-2 cell-quizzes-action" style="background-color: #808000; height: 30px;">
+                        @Html.ActionLink("Start test", "Start", routeValues: new {id = 1}, htmlAttributes: new {@class = "btn btn-xs btn-info"})
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+</body>
+</html>
