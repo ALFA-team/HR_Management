@@ -20,6 +20,7 @@ namespace HR_Management.DAL.Entity
             QuestionType qt5 = new QuestionType() { Name = "Image" };
             context.QuestionType.AddRange(new List<QuestionType>() { qt, qt1, qt2, qt3, qt4, qt5 });
             context.SaveChanges();
+            base.Seed(context);
         }
     }
 }
