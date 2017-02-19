@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR_Management", "HR_Management\HR_Management.csproj", "{43A6A86B-8A20-48CC-940D-324FAB6CB226}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR_Management.Tests", "HR_Management.Tests\HR_Management.Tests.csproj", "{1B195EB8-F507-455E-A344-3E5568AAD08D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR_Management.DAL", "HR_Management.DAL\HR_Management.DAL.csproj", "{F83DF0FC-FE64-49F2-B502-033CFD94ED5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{1B195EB8-F507-455E-A344-3E5568AAD08D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B195EB8-F507-455E-A344-3E5568AAD08D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B195EB8-F507-455E-A344-3E5568AAD08D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F83DF0FC-FE64-49F2-B502-033CFD94ED5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F83DF0FC-FE64-49F2-B502-033CFD94ED5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F83DF0FC-FE64-49F2-B502-033CFD94ED5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F83DF0FC-FE64-49F2-B502-033CFD94ED5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

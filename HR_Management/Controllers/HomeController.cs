@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HR_Management.DAL.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,8 +10,7 @@ namespace HR_Management.Controllers
     public class HomeController : Controller
     {
         public ActionResult Index()
-        {
-            string test = "test string";
+        {         
             return View();
         }
 
