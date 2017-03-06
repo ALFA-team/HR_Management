@@ -44,8 +44,36 @@ namespace HR_Management.Controllers
 
         // GET: Quizzes/Start/5
         public ActionResult Start(int id)
+        {            
+            AnswersModel ans1 = new AnswersModel() {AnswersId = 1, Text="ONLI 2" };
+            AnswersModel ans2 = new AnswersModel() { AnswersId = 2, Text = "ONLI 4" };
+            AnswersModel ans3 = new AnswersModel() { AnswersId = 3, Text = "ONLI 6" };
+            AnswersModel ans4 = new AnswersModel() { AnswersId = 4, Text = "ONLI 8" };
+            List<AnswersModel> anslist1 = new List<AnswersModel>() { ans1, ans2, ans3, ans4};
+            QuestionsModel quest1 = new QuestionsModel() { QuestionsId = 1, Text = " 2 + 2 = ", Answers = anslist1 };
+
+            AnswersModel ans5 = new AnswersModel() { AnswersId = 5, Text = "ONLI 4" };
+            AnswersModel ans6 = new AnswersModel() { AnswersId = 6, Text = "ONLI 6" };
+            AnswersModel ans7 = new AnswersModel() { AnswersId = 7, Text = "ONLI 8" };
+            AnswersModel ans8 = new AnswersModel() { AnswersId = 8, Text = "ONLI 12" };
+            List<AnswersModel> anslist2 = new List<AnswersModel>() { ans5, ans6, ans7, ans8 };
+            QuestionsModel quest2 = new QuestionsModel() { QuestionsId = 1, Text = " 2 + 2 * 2 = ", Answers = anslist2 };
+
+            List<QuestionsModel> Questions = new List<QuestionsModel>() { quest1, quest2};
+            
+            return View(new QuizViewModel().Question = Questions);
+        }
+
+        [HttpPost]
+        public ActionResult Start(int[] AnsId)
         {
-            throw new NotImplementedException();
+            int[] curentAnswer = new int[] { 2, 6};
+            if (curentAnswer[0] == AnsId[0] & curentAnswer[1] == AnsId[1])
+            {
+                return PartialView("Result", "You a Genius");
+            }
+
+            return PartialView("Result", "Try again");
         }
 
         //// GET: Quizzes/Details/5

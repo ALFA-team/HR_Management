@@ -1,0 +1,84 @@
+﻿@model List<HR_Management.Models.QuestionsModel>
+@{
+    ViewBag.Title = "Start";
+}
+
+<h2>TEST QUIZ</h2>
+@using (Html.BeginForm("Start", "Quizzes", FormMethod.Post, new { id = "form" }))
+{
+    var count = Model.LongCount();
+    <div id="all">@Model.LongCount()</div>
+
+    foreach (var quest in Model)
+    {
+        <div id="ques_@count" style="display: none">
+            @quest.Text
+            <div>
+                @foreach (var ans in quest.Answers)
+                {
+                    <div>
+                        @ans.Text
+                        @Html.CheckBox(ans.Text, new { id = ans.AnswersId })
+                    </div>
+                }
+            </div>
+        </div>
+        <button type="button" , name="Back" , id="Back_@count" style="display: none">Back</button>
+
+        count--;
+    }
+
+    <button type="button" , name="Next" , id="Next_">Next</button>
+    <button type="submit" , name="Send" id="sendall" style="display: none">Send</button>
+}
+@section scripts{
+    <script>
+        var form = $("#form");
+        form.on("submit", function (e, item) {
+            e.preventDefault();
+            var inputs = document.querySelectorAll("input[type='checkbox']");
+            var chec = [];
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].checked)
+                    chec.push(inputs[i].getAttribute('id'));
+            }
+
+            $.ajax({
+                url: "/Quizzes/Start",
+                success: function (result) {
+                    //debugger;
+                },
+                type: "Post",
+                traditional: true,
+                data: { AnsId: chec }
+            });
+        })
+
+        //var all = $("#all").text().trim();
+        //$(document).ready(function () {
+        //    debugger;
+        //    var test = $("#Next_2");
+        //    $("#"+all).css("display", "none");
+        //});
+
+        var all = $("#all").text().trim();
+        $(document).ready(function () {
+            if (all != 0 & all <= $("#all").text().trim()) {
+                $("#ques_" + all).css("display", "inline");
+            }
+        })
+        $("#Next_").click(function () {
+            debugger;
+                if (all != 1) {
+                    $("#ques_" + all).css("display", "none");
+                    all--;
+                    $("#ques_" + all).css("display", "inline");
+                } else {
+                    $("#ques_" + all).css("display", "none");
+                    $("#Next_").css("display", "none");
+                    $("#sendall").css("display", "inline");                
+            }
+        })
+
+    </script>
+}
