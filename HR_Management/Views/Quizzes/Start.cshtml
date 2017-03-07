@@ -30,6 +30,7 @@
 
     <button type="button" , name="Next" , id="Next_">Next</button>
     <button type="submit" , name="Send" id="sendall" style="display: none">Send</button>
+    <div id="result"></div>
 }
 @section scripts{
     <script>
@@ -46,7 +47,7 @@
             $.ajax({
                 url: "/Quizzes/Start",
                 success: function (result) {
-                    //debugger;
+                    $("#result").append(result)
                 },
                 type: "Post",
                 traditional: true,
